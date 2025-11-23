@@ -4,13 +4,20 @@ import { useLoaderData } from "react-router";
 import SenderInfo from "./SenderInfo";
 import ReceiverInfo from "./Receiverinfo";
 import Swal from "sweetalert2";
+import useAxiosInstance from "../../Hooks/useAxiosInstance";
 
 const SendParcel = () => {
+  // React hook from
   const { register, handleSubmit, control } = useForm();
 
+  // Axios custom hook
+  const axiosSecure = useAxiosInstance();
+
+  //Load data info
   const serviceCenter = useLoaderData();
   const regions = [...new Set(serviceCenter.map((center) => center.region))];
 
+  // Watch data by useWatch
   const senderRegions = useWatch({ control, name: "senderRegions" });
   const receiverRegions = useWatch({ control, name: "receiverRegions" });
 

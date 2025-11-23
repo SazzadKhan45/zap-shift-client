@@ -53,6 +53,7 @@ const SendParcel = () => {
       confirmButtonText: "Sent Your Parcel",
     }).then((result) => {
       if (result.isConfirmed) {
+        //
         // Swal.fire({
         //   title: "Deleted!",
         //   text: "Your file has been deleted.",

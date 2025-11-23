@@ -26,7 +26,7 @@ const SendParcel = () => {
     return found.map((item) => item.district);
   };
   // Submit handle function
-  const handleSentParcel = (data) => {
+  const handleSentParcel = async(data) => {
     console.log("Submitted Data:", data);
 
     const isDocument = data.parcelType === "document";
@@ -60,7 +60,13 @@ const SendParcel = () => {
       confirmButtonText: "Sent Your Parcel",
     }).then((result) => {
       if (result.isConfirmed) {
-        //
+        //Save the parcel info to the database
+        try{
+          const res = 
+        }
+        axiosSecure.post("/parcels", data).then((res) => {
+          console.log(res.data);
+        });
         // Swal.fire({
         //   title: "Deleted!",
         //   text: "Your file has been deleted.",

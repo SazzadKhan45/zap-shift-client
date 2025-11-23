@@ -20,6 +20,16 @@ const ReceiverInfo = ({
       </div>
 
       <div className="mb-4">
+        <label className="block mb-1">Receiver Email</label>
+        <input
+          type="email"
+          {...register("receiverEmail", { required: true })}
+          className="w-full border p-2 rounded"
+          placeholder="Enter Your email"
+        />
+      </div>
+
+      <div className="mb-4">
         <label className="block mb-1">Receiver Address</label>
         <input
           {...register("receiverAddress", { required: true })}

@@ -26,7 +26,7 @@ const SendParcel = () => {
     return found.map((item) => item.district);
   };
   // Submit handle function
-  const handleSentParcel = async(data) => {
+  const handleSentParcel = (data) => {
     console.log("Submitted Data:", data);
 
     const isDocument = data.parcelType === "document";
@@ -61,11 +61,9 @@ const SendParcel = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         //Save the parcel info to the database
-        try{
-          const res = 
-        }
+
         axiosSecure.post("/parcels", data).then((res) => {
-          console.log(res.data);
+          console.log("Parcel data save database", res.data);
         });
         // Swal.fire({
         //   title: "Deleted!",

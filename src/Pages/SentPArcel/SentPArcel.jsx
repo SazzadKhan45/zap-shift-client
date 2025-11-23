@@ -3,6 +3,7 @@ import MyContainer from "../../Components/MyContainer";
 import { useLoaderData } from "react-router";
 import SenderInfo from "./SenderInfo";
 import ReceiverInfo from "./Receiverinfo";
+import Swal from "sweetalert2";
 
 const SendParcel = () => {
   const { register, handleSubmit, control } = useForm();
@@ -41,6 +42,24 @@ const SendParcel = () => {
         cost = minCost + extraCharge;
       }
     }
+
+    Swal.fire({
+      title: "Agree to Sent-Parcel?",
+      text: `Total Cost is : ${cost} Tk`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sent Your Parcel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Swal.fire({
+        //   title: "Deleted!",
+        //   text: "Your file has been deleted.",
+        //   icon: "success",
+        // });
+      }
+    });
 
     console.log("PArcel Cost Is : ", cost);
   };

@@ -1,4 +1,5 @@
 import React from "react";
+import useAuth from "./../../Hooks/useAuth";
 
 const SenderInfo = ({
   register,
@@ -6,6 +7,10 @@ const SenderInfo = ({
   districtsByRegions,
   senderRegions,
 }) => {
+  //Auth info
+  const { user } = useAuth();
+  console.log(user);
+  //
   return (
     <div>
       <h3 className="font-medium text-lg mt-6 mb-2">Sender Details</h3>
@@ -13,6 +18,7 @@ const SenderInfo = ({
       <div className="mb-4">
         <label className="block mb-1">Sender Name</label>
         <input
+          defaultValue={user?.displayName}
           {...register("senderName", { required: true })}
           className="w-full border p-2 rounded"
           placeholder="Sender Name"
@@ -23,6 +29,8 @@ const SenderInfo = ({
         <label className="block mb-1">Sender Email</label>
         <input
           type="email"
+          defaultValue={user?.email}
+          readOnly
           {...register("senderEmail", { required: true })}
           className="w-full border p-2 rounded"
           placeholder="Enter Your email"

@@ -1,8 +1,12 @@
 Pricing Structure
-Parcel Type Weight Within City Outside City/District
-Document Any ৳60 ৳80
-Non-Document Up to 3kg ৳110 ৳150
-Non-Document >3kg +৳40/kg +৳40/kg +৳40 extra
+
+# Parcel Type Weight Within City Outside City/District
+
+# Document Any ৳60 ৳80
+
+# Non-Document Up to 3kg ৳110 ৳150
+
+# Non-Document >3kg +৳40/kg +৳40/kg +৳40 extra
 
 ZAPSHIFT
 Overview

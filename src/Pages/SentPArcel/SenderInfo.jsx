@@ -9,7 +9,7 @@ const SenderInfo = ({
 }) => {
   //Auth info
   const { user } = useAuth();
-  console.log(user);
+
   //
   return (
     <div>
